@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="javalib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../CS61B_SP16_Skeleton/javalib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../CS61B_SP16_Skeleton/javalib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../CS61B_SP16_Skeleton/javalib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../CS61B_SP16_Skeleton/javalib" recursive="false" type="SOURCES" />
+  </library>
+</component>
