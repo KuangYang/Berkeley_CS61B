@@ -67,8 +67,8 @@ public class myHashTable<K, V> {
     public static void main(String[] args) {
         myHashTable<String, String> mht = new myHashTable<String, String>(1024);
         mht.put("yang", "kuang");
-        mht.put("Usa", null);
-        mht.put(null, "Lynn");
+        // mht.put("Usa", null);
+        // mht.put(null, "Lynn");
         mht.put("Manhattan", "New York");
         System.out.println(mht.get("Usa"));
         System.out.println(mht.get("yang"));
