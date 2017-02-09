@@ -24,8 +24,8 @@ public class myHashTable<K, V> {
     }
 
     public synchronized void put(K key, V value) {
-        if (key == null) {
-            throw new NullPointerException("key is null!");
+        if (key == null || value == null) {
+            throw new NullPointerException("key or value is null!");
         }
         int key_index = key.hashCode() % this.size;
         if (arrayList.get(key_index) == null) {
@@ -67,9 +67,12 @@ public class myHashTable<K, V> {
     public static void main(String[] args) {
         myHashTable<String, String> mht = new myHashTable<String, String>(1024);
         mht.put("yang", "kuang");
-        mht.put("Usa", "Columbia");
+        mht.put("Usa", null);
+        mht.put(null, "Lynn");
+        mht.put("Manhattan", "New York");
         System.out.println(mht.get("Usa"));
         System.out.println(mht.get("yang"));
         System.out.println(mht.get("test"));
+        System.out.println(mht.get("Manhattan"));
     }
 }
