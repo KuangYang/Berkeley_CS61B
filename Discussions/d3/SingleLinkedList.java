@@ -33,8 +33,32 @@ public class SingleLinkedList {
         node.next = new SLNode(item, node.next);
     }
 
-    public void reverse() {
+    public void reverse_iteration() {
+        SLNode reversedFront = null;
+        SLNode nextToBeReversed = this.front;
+        while (nextToBeReversed != null) {
+            SLNode remainderOfOriginal = nextToBeReversed.next;
+            nextToBeReversed.next = reversedFront;
+            reversedFront = nextToBeReversed;
+            nextToBeReversed = remainderOfOriginal;
+        }
+        this.front = reversedFront;
+    }
 
+    private SLNode reverse_Recursion_Helper(SLNode node) {
+        if (node == null || node.next == null) {
+            return node;
+        } else {
+            SLNode target = this.reverse_Recursion_Helper(node.next);
+            node.next.next = node;
+            node.next = null;
+            return target;
+        }
+
+    }
+
+    public void reverse_recursion() {
+        this.front = this.reverse_Recursion_Helper(this.front);
     }
 
     public void traverse() {
@@ -64,6 +88,10 @@ public class SingleLinkedList {
         SLList.insert(1024, 10);
         SLList.traverse();
         SLList.insert(512, 5);
+        SLList.traverse();
+        SLList.reverse_recursion();
+        SLList.traverse();
+        SLList.reverse_iteration();
         SLList.traverse();
     }
 }
